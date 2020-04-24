@@ -1,3 +1,4 @@
+require "pry"
 class MP3Importer
     attr_accessor :path
     def initialize(path)
@@ -7,7 +8,7 @@ class MP3Importer
     def files
         files = []
         Dir.new(self.path).each do |file|
-            files << file if file.length > 4
+            files << file if file.length > 2
         end
         files
     end
