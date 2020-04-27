@@ -6,10 +6,10 @@ class MP3Importer
     end
 
     def files
-        Dir.new(@path).select do |file|file.end_with?(".mp3")
+        Dir.new(@path).select {|file|file.end_with?(".mp3")}
     end
 
     def import
-        self.files.each{ |filename| Song.new_by_filename(filename) }
+        self.files.map {|filename| Song.new_by_filename(filename)}
     end
 end

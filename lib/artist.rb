@@ -20,10 +20,6 @@ class Artist
         Song.all.select {|song| song.artist == self}
     end
 
-    # def self.create_by_name(name)
-    #     artist = Artist.new(name)
-    # end
-
     def self.find_or_create_by_name(name)
         @@all.any? {|artist| artist.name == name} ? @@all.find {|artist| artist.name == name} : Artist.new(name)
     end
